@@ -21,7 +21,7 @@ struct StatusBarItem: View {
             if SCContext.streamType != nil {
                 ZStack {
                     Rectangle()
-                        .fill(Color.mypurple)
+                        .fill(Color.purple)
                         .shadow(color: .black.opacity(0.3), radius: 4)
                         .cornerRadius(4)
                     HStack(spacing: 4) {
@@ -82,7 +82,7 @@ struct StatusBarItem: View {
                         }, label: {
                             ZStack {
                                 Rectangle()
-                                    .fill(SCContext.isCameraRunning() ? Color.mygreen : .gray)
+                                    .fill(SCContext.isCameraRunning() ? Color.green : .gray)
                                     .shadow(color: .black.opacity(0.3), radius: 4)
                                     .cornerRadius(4)
                                 Image("camera")
@@ -99,7 +99,7 @@ struct StatusBarItem: View {
                         }, label: {
                             ZStack {
                                 Rectangle()
-                                    .fill(deviceWindow.isVisible ? Color.myblue : .gray.opacity(0.7))
+                                    .fill(deviceWindow.isVisible ? Color.blue : .gray.opacity(0.7))
                                     .shadow(color: .black.opacity(0.3), radius: 4)
                                     .cornerRadius(4)
                                 Image(systemName: "apps.ipad")

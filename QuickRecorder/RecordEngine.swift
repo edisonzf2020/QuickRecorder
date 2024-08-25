@@ -134,7 +134,7 @@ extension AppDelegate {
         let conf: SCStreamConfiguration
         if recordHDR {
             if #available(macOS 15, *) {
-                conf = SCStreamConfiguration(preset: .captureHDRStreamLocalDisplay)
+                conf = SCStreamConfiguration()
             } else { conf = SCStreamConfiguration() }
         } else { conf = SCStreamConfiguration() }
         conf.width = 2
@@ -476,8 +476,8 @@ extension AppDelegate {
                 if SCContext.lastPTS == nil { return }
                 if SCContext.awInput.isReadyForMoreMediaData { SCContext.awInput.append(SampleBuffer) }
             }
-        case .microphone:
-            break
+        // case .microphone:
+        //     break
         @unknown default:
             assertionFailure("unknown stream type".local)
         }

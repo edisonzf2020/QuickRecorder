@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug QuickRecorder",
+            "program": "${workspaceFolder:QuickRecorder}/.build/debug/QuickRecorder",
+            "args": [],
+            "cwd": "${workspaceFolder:QuickRecorder}",
+            "preLaunchTask": "swift: Build Debug QuickRecorder"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:QuickRecorder}",
+            "name": "Release QuickRecorder",
+            "program": "${workspaceFolder:QuickRecorder}/.build/release/QuickRecorder",
+            "preLaunchTask": "swift: Build Release QuickRecorder"
+        }
+    ]
+}

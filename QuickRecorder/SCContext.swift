@@ -228,7 +228,7 @@ class SCContext {
             if alert.runModal() == .alertFirstButtonReturn {
                 NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture")!)
             }
-            NSApp.terminate(self)
+//            NSApp.terminate(self)
         }
     }
     

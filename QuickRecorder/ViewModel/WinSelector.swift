@@ -248,7 +248,7 @@ class WindowSelectorViewModel: NSObject, ObservableObject, SCStreamDelegate, SCS
         if let cgImage = cgImage {
             nsImage = NSImage(cgImage: cgImage, size: NSSize(width: cgImage.width, height: cgImage.height))
         } else {
-            nsImage = NSImage.unknowScreen
+            nsImage = NSImage(systemSymbolName: "questionmark.square", accessibilityDescription: "Unknown Screen")!
         }
         if let index = self.streams.firstIndex(of: stream), index + 1 <= self.allWindows.count {
             let currentWindow = self.allWindows[index]
@@ -306,7 +306,7 @@ class WindowSelectorViewModel: NSObject, ObservableObject, SCStreamDelegate, SCS
                         }
                     } else {
                         for w in self.allWindows {
-                            let thumbnail = WindowThumbnail(image: NSImage.unknowScreen, window: w)
+                            let thumbnail = WindowThumbnail(image: NSImage(systemSymbolName: "questionmark.square", accessibilityDescription: "Unknown Screen")!, window: w)
                             guard let displays = SCContext.availableContent?.displays.filter({ NSIntersectsRect(w.frame, $0.frame) }) else { break }
                             for d in displays {
                                 DispatchQueue.main.async {

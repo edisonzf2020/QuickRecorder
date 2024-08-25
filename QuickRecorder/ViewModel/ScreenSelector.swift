@@ -181,7 +181,13 @@ class ScreenSelectorViewModel: NSObject, ObservableObject, SCStreamDelegate, SCS
         var nsImage: NSImage?
         if let cgImage = cgImage { nsImage = NSImage(cgImage: cgImage, size: NSSize(width: cgImage.width, height: cgImage.height)) }
         if let index = self.streams.firstIndex(of: stream), index + 1 <= self.allScreens.count {
-            if nsImage == nil { nsImage = SCContext.getWallpaper(self.allScreens[index]) ?? NSImage.unknowScreen }
+            if nsImage == nil {
+                nsImage = SCContext.getWallpaper(self.allScreens[index]) ?? NSImage(size: NSSize(width: 100, height: 100), flipped: false) { rect in
+                    NSColor.gray.setFill()
+                    rect.fill()
+                    return true
+                }
+            }
             let currentScreen = self.allScreens[index]
             let thumbnail = ScreenThumbnail(image: nsImage!, screen: currentScreen)
             DispatchQueue.main.async {

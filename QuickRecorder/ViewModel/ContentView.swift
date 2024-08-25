@@ -292,7 +292,7 @@ struct CountdownView: View {
 
     var body: some View {
         ZStack {
-            Color.mypurple.environment(\.colorScheme, .dark)
+            Color.purple.environment(\.colorScheme, .dark)
             Text("\(countdownValue)")
                 .font(.system(size: 72))
                 .foregroundColor(.white)

@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run",
+      "type": "shell",
+      "command": "xcodebuild -scheme QuickRecorder -configuration Debug && ./build/Debug/QuickRecorder.app/Contents/MacOS/QuickRecorder",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
